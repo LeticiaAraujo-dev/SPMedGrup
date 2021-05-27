@@ -1,5 +1,5 @@
-/*CREATE DATABASE SPMedGroup;
-GO*/
+CREATE DATABASE SPMedGroup;
+GO
 
 USE SPMedGroup;
 GO
@@ -26,12 +26,12 @@ CREATE TABLE paciente
 	,idPaciente			INT PRIMARY KEY IDENTITY
 	,DataNascimento		DATE NOT NULL
 	,NomePaciente		VARCHAR(200) NOT NULL
-	,Telefone			INT
-	,CPF				INT NOT NULL
+	,Telefone			CHAR(11) UNIQUE
+	,CPF				CHAR(11) UNIQUE NOT NULL
 	,Rua				VARCHAR(200) 
-	,Numero				INT
-	,CEP				INT
-	,RG					INT NOT NULL
+	,Numero				INT UNIQUE
+	,CEP				CHAR(11) UNIQUE
+	,RG					CHAR(11) UNIQUE NOT NULL
 );
 GO
 
