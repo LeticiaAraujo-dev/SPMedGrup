@@ -10,7 +10,6 @@ namespace senai_spmedgroup.Interfaces
     {
         List<UsuariosDomain> ListarTodos();
         UsuariosDomain BuscarPorId(int id);
-        UsuariosDomain BuscarPorEmailSenha(string email, string senha);
         void Cadastrar(UsuariosDomain usuarioNovo);
         void Atualizar(int id, UsuariosDomain usuarioAtualizado);
         void Deletar(int id);

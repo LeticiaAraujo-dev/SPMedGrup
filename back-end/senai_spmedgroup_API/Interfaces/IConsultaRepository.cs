@@ -17,5 +17,7 @@ namespace senai_spmedgroup.Interfaces
         void Atualizar(int id, ConsultaDomain consultaAtualizada);
 
         void Deletar(int id);
+
+        List<ConsultaDomain> ListarMinhas(int id);
     }
 }

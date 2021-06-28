@@ -34,42 +34,6 @@ namespace senai_spmedgroup.Repository
             }
         }
 
-        public UsuariosDomain BuscarPorEmailSenha(string email, string senha)
-        {
-            using (SqlConnection con = new SqlConnection(stringConexao))
-            {
-                string querySelectById = "SELECT email, NomeTipoUsuario FROM usuarios U LEFT JOIN tiposUsuarios TU ON U.idTipoUsuario = TU.idTipoUsuarioWHERE email = @EMAIL AND senha = @SENHA;"; 
-
-                con.Open();
-
-                SqlDataReader rdr;
-
-                using (SqlCommand cmd = new SqlCommand(querySelectById, con))
-                {
-                    cmd.Parameters.AddWithValue("@EMAIL", email);
-                    cmd.Parameters.AddWithValue("@SENHA", senha);
-
-                    rdr = cmd.ExecuteReader();
-
-                    if (rdr.Read())
-                    {
-                        UsuariosDomain usuarioBuscado = new UsuariosDomain()
-                        {
-                            email = rdr[0].ToString(),
-                            TipoUsuario = new TiposUsuariosDomain
-                            {
-                                NomeTipoUsuario = rdr[1].ToString(),
-                            },
-                        };
-
-                        return usuarioBuscado;
-                    }
-
-                    return null;
-
-                }
-            }
-        }
 
         public UsuariosDomain BuscarPorId(int id)
         {
@@ -168,7 +132,7 @@ namespace senai_spmedgroup.Repository
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelect = "SELECT idUsuario AS 'Id do Usuario', email AS 'Email', NomeTipoUsuario AS 'Tipo de Usuario' FROM usuarios LEFT JOIN tiposUsuarios ON usuarios.idTipoUsuario = tiposUsuarios.idTipoUsuario WHERE email = @email, senha = @senha ";
+                string querySelect = "SELECT idUsuario AS 'Id do Usuario', email AS 'Email', NomeTipoUsuario AS 'Tipo de Usuario', idTipoUsuario FROM usuarios LEFT JOIN tiposUsuarios ON usuarios.idTipoUsuario = tiposUsuarios.idTipoUsuario WHERE email = @email, senha = @senha ";
 
                 using (SqlCommand cmd = new SqlCommand(querySelect, con))
                 {
@@ -187,7 +151,8 @@ namespace senai_spmedgroup.Repository
                             email = rdr[1].ToString(),
                             TipoUsuario = new TiposUsuariosDomain
                             {
-                                NomeTipoUsuario = rdr[2].ToString()
+                                NomeTipoUsuario = rdr[2].ToString(),
+                                idTipoUsuario = Convert.ToInt32(rdr[3])
                             }
                         };
 

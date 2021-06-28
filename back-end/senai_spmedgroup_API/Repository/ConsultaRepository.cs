@@ -108,6 +108,11 @@ namespace senai_spmedgroup.Repository
             }
         }
 
+        public List<ConsultaDomain> ListarMinhas(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ConsultaDomain> ListarTodos()
         {
             List<ConsultaDomain> listaConsulta = new List<ConsultaDomain>();

@@ -48,7 +48,7 @@ namespace senai_spmedgroup.Controllers
         [HttpPost("Login")]
         public IActionResult Login(UsuariosDomain login)
         {
-            UsuariosDomain usuarioBuscado = _usuariosRepository.BuscarPorEmailSenha(login.email, login.senha);
+            UsuariosDomain usuarioBuscado = _usuariosRepository.Login(login.email, login.senha);
 
             if (usuarioBuscado == null)
             {
