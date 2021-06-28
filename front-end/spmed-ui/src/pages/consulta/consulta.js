@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Consultas extends Component{
@@ -10,10 +10,20 @@ class Consultas extends Component{
     }
 
     buscarConsulta = () => {
+        console.log("mensagem teste")
+        fetch('http://localhost:5000/api/Consulta'
+            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
+        //}
+        )
 
-        fetch('http://localhost:5000/api/Consulta')
+        .then(resposta => console.log(resposta))
 
-        .then(resposta => resposta.json())
+        .then(resposta => {
+            if (resposta.status !== 200) {
+                throw Error();
+            };
+            return resposta.json();
+        })
 
         .then(data => this.setState({ listaConsultas: data }))
 
@@ -41,7 +51,7 @@ class Consultas extends Component{
                                 <th>Hora</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="card-consulta">
                             {
                                 this.state.listaConsultas.map( (consulta) => {
                                     return(

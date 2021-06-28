@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BAU77RwA1HkKQp48GCMt+E5c2zuLZvPRPf57zANCdhBn7X8nGuVCFR/WYntVJJgO5wh0358zWnG8oGPEspJx4A==",
+  "dgSpecHash": "3sMmelz3QbjlvmnJcaPeY/UdOinNCge6oyZLUlBywVU6JM8FozjzWmoVM+V1/Uz+amCRFhMMzq5k+ORmpb4VpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
+  "projectFilePath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cliente\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.7\\microsoft.aspnetcore.authentication.jwtbearer.5.0.7.nupkg.sha512",
     "C:\\Users\\Cliente\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

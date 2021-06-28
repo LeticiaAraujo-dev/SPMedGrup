@@ -30,7 +30,7 @@ namespace senai_spmedgroup.Controllers
         [HttpPost]
         public IActionResult Post(ConsultaDomain novaConsulta)
         {
-
+            _consultaRepository.Cadastrar(novaConsulta);
             return Created("http://localhost:5000/api/Consulta", novaConsulta);
         }
 

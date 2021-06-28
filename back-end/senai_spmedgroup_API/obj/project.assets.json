@@ -1018,11 +1018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
+      "projectUniqueName": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
       "projectName": "senai_spmedgroup",
-      "projectPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
+      "projectPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
       "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\senai_spmedgroup_API\\obj\\",
+      "outputPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
