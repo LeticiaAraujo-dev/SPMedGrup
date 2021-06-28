@@ -1,0 +1,13 @@
+body {
+    background-color: #f2f5f7;
+    font-family: "Open Sans", "Raleway", Arial, sans-serif;
+    color: black;
+}
+
+.cabecario {
+    background-color: yellow;
+}
+
+.container.img{
+    height: 100vh;
+}
