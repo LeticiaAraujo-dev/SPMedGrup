@@ -18,6 +18,7 @@ VALUES					 (2, 'ricardo.lemos@spmedicalgroup.com.br','12345' )
 						,(3, 'joao@hotmail.com','12345' )
 						,(3, 'bruno@gmail.com','12345' )
 						,(3, 'mariana@outlook.com','12345' )
+						,(1, 'Admin@gmail.com', '12345')
 GO
 
 INSERT INTO paciente(idUsuario, DataNascimento, NomePaciente, CPF, RG, Telefone, Rua, Numero, CEP)
@@ -69,12 +70,12 @@ VALUES					 ('Realizada')
 GO
 
 INSERT INTO consulta(idSituacao, idMedico, idPaciente, DataRealizacao)
-VALUES					 (1, 4, 7, '20/01/2020 15:00:00')
-						,(2, 3, 2, '06/01/2020 10:00:00')
-						,(1, 3, 3, '07/02/2020 11:00:00')
-						,(1, 3, 2, '06/02/2018 10:00:00')
-						,(2, 2, 4, '07/02/2019 11:00:00')
-						,(2, 2, 4, '07/02/2019 11:00:00')
+VALUES					 (1, 3, 7, '20/01/2020 15:00:00')
+						,(2, 2, 2, '06/01/2020 10:00:00')
+						,(1, 2, 3, '07/02/2020 11:00:00')
+						,(1, 2, 2, '06/02/2018 10:00:00')
+						,(2, 1, 4, '07/02/2019 11:00:00')
+						,(2, 1, 4, '07/02/2019 11:00:00')
 
 
 

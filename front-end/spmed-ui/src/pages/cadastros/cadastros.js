@@ -89,36 +89,32 @@ class Cadastro extends Component{
         }
     };
 
-    // Recebe um tipo de evento da lista
     buscarConsultaPorId = (consulta) => {
         this.setState({
-            // Atualiza o state idTipoEventoAlterado com o valor do ID do Tipo de Evento recebido
             idConsultaAlterada : consulta.idConsulta,
-            // e o state titulo com o valor do titulo do Tipo de Evento recebido
-auisfhdgsifhdgiksdhfughsdfuhg
 
-            titulo : tipoEvento.tituloTipoEvento
+            idMedico : consulta.idMedicoNovo,
+            idPaciente : consulta.idPacienteNovo,
+            dataRealizacao : consulta.dataRealizacaoNovo,
+            idSituacao : consulta.idSituacaoNovo
         }, () => {
             console.log(
-                // Exibe no console do navegador o valor do ID do Tipo de Evento recebido
-                'O Tipo de Evento ' + tipoEvento.idTipoEvento + ' foi selecionado, ',
-                // o valor do state idTipoEventoAlterado
-                'agora o valor do state idTipoEventoAlterado é: ' + this.state.idTipoEventoAlterado,
-                // e o valor do state titulo
-                'e o valor do state titulo é: ' + this.state.titulo
+                'A consulta ' + consulta.idConsulta + ' foi selecionada, ',
+                'agora o valor do state idMedico é: ' + this.state.idMedicoNovo,
+                'e o valor do state idPaciente é: ' + this.state.idPacienteNovo,
+                'e o valor do state dataRealizacao é: ' + this.state.dataRealizacaoNovo,
+                'e o valor do state idSituacao é: ' + this.state.idSituacaoNovo,
+
             );
         });
     };
 
-    // Função responsável por excluir um Tipo de Evento
-    excluirTipoEvento = (tipoEvento) => {
-        // Exibe no console do navegador o ID do Tipo de Evento recebido
-        console.log('O Tipo de Evento ' + tipoEvento.idTipoEvento + ' foi selecionado')
+    excluirTipoEvento = (consulta) => {
+        console.log('A consulta ' + consulta.idConsulta + ' foi selecionada')
 
-        // Faz a chamada para a API usando fetch passando o ID do Tipo de Evento recebido na URL da requisição
-        fetch('http://localhost:5000/api/tiposeventos/' + tipoEvento.idTipoEvento,
+
+        fetch('http://localhost:5000/api/Consulta/' + consulta.idConsulta,
         {
-            // Define o método da requisição ( DELETE )
             method : 'DELETE',
 
             // Define o cabeçalho da requisição
@@ -127,29 +123,25 @@ auisfhdgsifhdgiksdhfughsdfuhg
             }
         })
 
-        // Caso a requisição retorne um status code 204,
         .then(resposta => {
             if (resposta.status === 204) {
-                // Exibe no console do navegador a mensagem 'Tipo de Evento x excluído!' onde x é o ID do Tipo de Evento excluído
-                console.log('Tipo de Evento ' + tipoEvento.idTipoEvento + ' excluído!')
+                console.log('Consulta ' + consulta.idConsulta + ' excluída!')
             };
         })
 
-        // Caso ocorra alguma erro, exibe este erro no console do navegador
         .catch(erro => console.log(erro))
 
-        // Então, atualiza a lista de Tipos de Eventos
-        // sem o usuário precisar executar outra ação
-        .then(this.buscarTiposEventos)
+        .then(this.buscarConsulta)
     }
 
-    // Reseta os states titulo e idTipoEventoAlterado
     limparCampos = () => {
         this.setState({
-            titulo : '',
-            idTipoEventoAlterado : 0
+            idConsulta: 0,
+            idMedico : 0,
+            idPaciente : 0,
+            dataRealizacao: new Date,
+            idSituacao: 0
         })
-        // Exibe no console do navegador a mensagem 'Os states foram resetados!'
         console.log('Os states foram resetados!')
     }
 
@@ -157,5 +149,17 @@ auisfhdgsifhdgiksdhfughsdfuhg
 
     }
 
+    render(){
+        return(
+            <div>
+                <section className="cadastro-consulta">
+                    <h1 className="titulo-secao">Cadastro de Consultas</h1>
+                    <form onSubmit={this.cadastrarConsulta}>
+
+                    </form>
+                </section>
+            </div>
+
+        )}
     
 }

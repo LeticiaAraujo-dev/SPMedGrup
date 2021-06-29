@@ -10,7 +10,9 @@ namespace senai_spmedgroup.Repository
 {
     public class UsuariosRepository : IUsuariosRepository
     {
-        private string stringConexao = "Data Source=DESKTOP-EEVEMF2\\SQLEXPRESS; initial catalog=SPMedGroup; user Id=sa; pwd=Leticia0304";
+        //private string stringConexao = "Data Source=DESKTOP-EEVEMF2\\SQLEXPRESS; initial catalog=SPMedGroup; user Id=sa; pwd=Leticia0304";
+        private string stringConexao = "Data Source=LAB08DESK2701\\SQLEXPRESS01; initial catalog=SPMedGroup; user Id=sa; pwd=sa132";
+        
 
         public void Atualizar(int id, UsuariosDomain usuarioAtualizado)
         {
@@ -132,7 +134,8 @@ namespace senai_spmedgroup.Repository
         {
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
-                string querySelect = "SELECT idUsuario AS 'Id do Usuario', email AS 'Email', NomeTipoUsuario AS 'Tipo de Usuario', idTipoUsuario FROM usuarios LEFT JOIN tiposUsuarios ON usuarios.idTipoUsuario = tiposUsuarios.idTipoUsuario WHERE email = @email, senha = @senha ";
+                string querySelect = "SELECT idUsuario, email, NomeTipoUsuario, tiposUsuarios.idTipoUsuario " +
+                    "FROM usuarios LEFT JOIN tiposUsuarios ON usuarios.idTipoUsuario = tiposUsuarios.idTipoUsuario WHERE email = @email AND senha = @senha ";
 
                 using (SqlCommand cmd = new SqlCommand(querySelect, con))
                 {

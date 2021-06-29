@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.JsonWebTokens;
 using senai_spmedgroup.Domains;
 using senai_spmedgroup.Interfaces;
 using senai_spmedgroup.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace senai_spmedgroup.Controllers
@@ -73,6 +76,26 @@ namespace senai_spmedgroup.Controllers
             }
 
             return NotFound("Nenhuma consulta encontrada para o identificador informado");
+        }
+
+        [HttpGet("minhas")]
+        public IActionResult GetMy()
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                int idTipoUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value);
+
+                return Ok(_consultaRepository.ListarMinhas(idUsuario, idTipoUsuario));
+            }
+            catch (Exception error)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "Não é possível mostrar as presenças se o usuário não estiver logado!",
+                    error
+                });
+            }
         }
     }
 }

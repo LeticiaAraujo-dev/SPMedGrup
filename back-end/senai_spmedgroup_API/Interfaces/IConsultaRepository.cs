@@ -18,6 +18,6 @@ namespace senai_spmedgroup.Interfaces
 
         void Deletar(int id);
 
-        List<ConsultaDomain> ListarMinhas(int id);
+        List<ConsultaDomain> ListarMinhas(int id, int idTipoUsuario);
     }
 }

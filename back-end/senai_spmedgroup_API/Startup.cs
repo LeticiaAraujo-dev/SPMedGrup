@@ -1,10 +1,11 @@
-using Microsoft.AspNetCore.Builder;
+ï»¿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,7 +21,15 @@ namespace senai_spmedgroup
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    // Ignora os loopings nas consultas
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    // Ignora valores nulos ao fazer junï¿½ï¿½es nas consultas
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
 
             services.AddCors(options =>
             {
@@ -53,31 +62,31 @@ namespace senai_spmedgroup
                     options.DefaultChallengeScheme = "JwtBearer";
                 })
 
-                // Define os parâmetros de validação do token
+                // Define os parÃ¢metros de validaÃ§Ã£o do token
                 .AddJwtBearer("JwtBearer", options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        // Quem está emitindo
+                        // Quem estÃ¡ emitindo
                         ValidateIssuer = true,
 
-                        // Quem está validando
+                        // Quem estÃ¡ validando
                         ValidateAudience = true,
 
-                        // Definindo que o tempo de expiração será validado
+                        // Definindo que o tempo de expiraÃ§Ã£o serÃ¡ validado
                         ValidateLifetime = true,
 
                         // Forma de criptografia
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmedgroup-chave-autenticacao")),
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmdegroup-chave-autenticacao")),
 
-                        // Tempo de expiração do token
+                        // Tempo de expiraÃ§Ã£o do token
                         ClockSkew = TimeSpan.FromHours(2),
 
-                        // Nome do issuer, de onde está vindo
-                        ValidIssuer = "senai_spmedgroup.webApi",
+                        // Nome do issuer, de onde estÃ¡ vindo
+                        ValidIssuer = "senai_spmdegroup.webApi",
 
-                        // Nome do audience, para onde está indo
-                        ValidAudience = "senai_spmedgroup.webApi"
+                        // Nome do audience, para onde estÃ¡ indo
+                        ValidAudience = "senai_spmdegroup.webApi"
                     };
                 });
         }
@@ -90,10 +99,6 @@ namespace senai_spmedgroup
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
-
-            app.UseAuthentication();
-
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
@@ -101,6 +106,10 @@ namespace senai_spmedgroup
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "senai_spmedgroup.webApi");
                 c.RoutePrefix = string.Empty;
             });
+
+            app.UseRouting();
+
+            app.UseAuthentication();            
 
             app.UseAuthorization();
 
