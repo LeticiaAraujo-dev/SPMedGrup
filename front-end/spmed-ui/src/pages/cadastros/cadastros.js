@@ -15,7 +15,7 @@ class Cadastro extends Component{
     // Função responsável por cadastrar um Tipo de Evento
     cadastrarConsulta = (event) => {
         // Ignora o comportamento padrão do navegador
-        event.preventDefault();
+        //event.preventDefault();
 
         if (this.state.idConsulta !== 0) {
 
@@ -145,8 +145,68 @@ class Cadastro extends Component{
         console.log('Os states foram resetados!')
     }
 
-    componentDidMount(){
+    buscarIdPaciente = () => {
+        fetch('http://localhost:5000/api/Paciente'
+            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
+        //}
+        )
 
+        .then(resposta => {
+            if (resposta.status !== 200) {
+                throw Error();
+            };
+            return resposta.json();
+        })
+
+        .then(data => this.setState({ idPaciente : data }))
+
+        .catch((erro) => console.log(erro))
+
+        console.log(this.state.idPaciente);
+    }
+
+    buscarIdMedico = () => {
+        fetch('http://localhost:5000/api/Medico'
+            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
+        //}
+        )
+
+        .then(resposta => {
+            if (resposta.status !== 200) {
+                throw Error();
+            };
+            return resposta.json();
+        })
+
+        .then(data => this.setState({ idPaciente : data }))
+
+        .catch((erro) => console.log(erro))
+
+        console.log(this.state.idPaciente);
+    }
+
+    buscarIdSituacao = () => {
+        fetch('http://localhost:5000/api/Situacao'
+            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
+        //}
+        )
+
+        .then(resposta => {
+            if (resposta.status !== 200) {
+                throw Error();
+            };
+            return resposta.json();
+        })
+
+        .then(data => this.setState({ idPaciente : data }))
+
+        .catch((erro) => console.log(erro))
+
+        console.log(this.state.idPaciente);
+    }
+
+    componentDidMount(){
+       
     }
 
     render(){
@@ -155,7 +215,20 @@ class Cadastro extends Component{
                 <section className="cadastro-consulta">
                     <h1 className="titulo-secao">Cadastro de Consultas</h1>
                     <form onSubmit={this.cadastrarConsulta}>
-
+                        <input list="idMedico" name="idMedico"/>
+                            <datalist>
+                                
+                                <option value={this.buscarIdPaciente}/>
+                            </datalist>
+                        <input list="idPaciente" name="idPaciente"/>
+                            <datalist>
+                                <option value={this.buscarIdMedico}/>
+                            </datalist>
+                        <input list="idSituacao" name="idSituacao"/>
+                            <datalist>
+                                <option value={this.buscarIdSituacao}/>
+                            </datalist>
+                        <input type="submit"/>
                     </form>
                 </section>
             </div>
@@ -163,3 +236,5 @@ class Cadastro extends Component{
         )}
     
 }
+
+export default Cadastro;

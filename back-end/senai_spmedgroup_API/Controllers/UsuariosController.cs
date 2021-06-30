@@ -42,7 +42,7 @@ namespace senai_spmedgroup.Controllers
                 return BadRequest("A senha é obrigatória!");
 
             }
-            return Created("http://localhost:44696/api/Usuarios", novoUsuario);
+            return Created("http://localhost:5000/api/Usuarios", novoUsuario);
         }
 
         [HttpPost("Login")]
