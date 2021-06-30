@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+
+
 class Cadastro extends Component{
     constructor(props){
         super(props);
@@ -7,7 +9,7 @@ class Cadastro extends Component{
             idConsulta: 0,
             idMedico : 0,
             idPaciente : 0,
-            dataRealizacao: new Date,
+            dataRealizacao: new Date(),
             idSituacao: 0
         }
     }
@@ -15,8 +17,8 @@ class Cadastro extends Component{
     // Função responsável por cadastrar um Tipo de Evento
     cadastrarConsulta = (event) => {
         // Ignora o comportamento padrão do navegador
-        //event.preventDefault();
-
+        event.preventDefault();
+        this.setState({ isLoading : true });
         if (this.state.idConsulta !== 0) {
 
             fetch('http://localhost:5000/api/Consulta/' + this.state.idConsulta,
@@ -31,10 +33,10 @@ class Cadastro extends Component{
                     idSituacao : this.state.idSituacaoAlterada
                 }),
 
-                headers : {
-                    "Content-Type" : "application/json",
-                    'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-                }
+                // headers : {
+                //     "Content-Type" : "application/json",
+                //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+                // }
             })
 
             .then(resposta => {
@@ -50,8 +52,6 @@ class Cadastro extends Component{
                 };
             })
 
-            .then(this.buscarConsulta)
-
             .then(this.limparCampos)
         }
 
@@ -63,7 +63,7 @@ class Cadastro extends Component{
                 method : 'POST',
 
  
-                body : JSON.stringify({ idConsulta : this.state.idConsultaNova, 
+                body : JSON.stringify({ 
                                         idMedico : this.state.idMedicoNovo,
                                         idPaciente : this.state.idPacienteNovo,
                                         dataRealizacao : this.state.dataRealizacaoNovo,
@@ -71,10 +71,10 @@ class Cadastro extends Component{
                 }),
 
                 // Define o cabeçalho da requisição
-                headers : {
-                    "Content-Type" : "application/json",
-                    'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-                }
+                // headers : {
+                //     "Content-Type" : "application/json",
+                //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+                // }
             })
 
 
@@ -83,31 +83,31 @@ class Cadastro extends Component{
             .catch(erro => console.log(erro))
 
 
-            .then(this.buscarConsulta)
-
             .then(this.limparCampos)
         }
     };
 
     buscarConsultaPorId = (consulta) => {
         this.setState({
-            idConsultaAlterada : consulta.idConsulta,
+            idConsulta : consulta.idConsulta,
 
-            idMedico : consulta.idMedicoNovo,
-            idPaciente : consulta.idPacienteNovo,
-            dataRealizacao : consulta.dataRealizacaoNovo,
-            idSituacao : consulta.idSituacaoNovo
+            idMedico : consulta.idMedico,
+            idPaciente : consulta.idPaciente,
+            dataRealizacao : consulta.dataRealizacao,
+            idSituacao : consulta.idSituacao
         }, () => {
             console.log(
-                'A consulta ' + consulta.idConsulta + ' foi selecionada, ',
-                'agora o valor do state idMedico é: ' + this.state.idMedicoNovo,
-                'e o valor do state idPaciente é: ' + this.state.idPacienteNovo,
-                'e o valor do state dataRealizacao é: ' + this.state.dataRealizacaoNovo,
-                'e o valor do state idSituacao é: ' + this.state.idSituacaoNovo,
+                'A consulta ' + consulta.idConsultaNova + ' foi selecionada, ',
+                'agora o valor do state idMedico é: ' + this.state.idMedico,
+                'e o valor do state idPaciente é: ' + this.state.idPaciente,
+                'e o valor do state dataRealizacao é: ' + this.state.dataRealizacao,
+                'e o valor do state idSituacao é: ' + this.state.idSituacao,
 
             );
         });
     };
+
+    
 
     excluirTipoEvento = (consulta) => {
         console.log('A consulta ' + consulta.idConsulta + ' foi selecionada')
@@ -118,9 +118,9 @@ class Cadastro extends Component{
             method : 'DELETE',
 
             // Define o cabeçalho da requisição
-            headers : {
-                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-            }
+            // headers : {
+            //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            // }
         })
 
         .then(resposta => {
@@ -131,79 +131,37 @@ class Cadastro extends Component{
 
         .catch(erro => console.log(erro))
 
-        .then(this.buscarConsulta)
     }
 
     limparCampos = () => {
         this.setState({
-            idConsulta: 0,
             idMedico : 0,
             idPaciente : 0,
-            dataRealizacao: new Date,
+            dataRealizacao: new Date(),
             idSituacao: 0
         })
         console.log('Os states foram resetados!')
     }
 
-    buscarIdPaciente = () => {
-        fetch('http://localhost:5000/api/Paciente'
-            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
-        //}
-        )
+    // atualizaStateCampo = (campo) => {
+    //      this.setState({ [campo.target.name] : campo.target.value }) 
+    // };
 
-        .then(resposta => {
-            if (resposta.status !== 200) {
-                throw Error();
-            };
-            return resposta.json();
-        })
+    atualizaEstadoMedico = async (event) => {
+        await this.setState({ idMedico : event.target.value })
+    };
 
-        .then(data => this.setState({ idPaciente : data }))
+    atualizaEstadoPaciente = async (event) => {
+        await this.setState({ idPaciente : event.target.value })
+    };
 
-        .catch((erro) => console.log(erro))
+    atualizaEstadoSitacao = async (event) => {
+        await this.setState({ idSituacao : event.target.value })
+    };
 
-        console.log(this.state.idPaciente);
-    }
-
-    buscarIdMedico = () => {
-        fetch('http://localhost:5000/api/Medico'
-            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
-        //}
-        )
-
-        .then(resposta => {
-            if (resposta.status !== 200) {
-                throw Error();
-            };
-            return resposta.json();
-        })
-
-        .then(data => this.setState({ idPaciente : data }))
-
-        .catch((erro) => console.log(erro))
-
-        console.log(this.state.idPaciente);
-    }
-
-    buscarIdSituacao = () => {
-        fetch('http://localhost:5000/api/Situacao'
-            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
-        //}
-        )
-
-        .then(resposta => {
-            if (resposta.status !== 200) {
-                throw Error();
-            };
-            return resposta.json();
-        })
-
-        .then(data => this.setState({ idPaciente : data }))
-
-        .catch((erro) => console.log(erro))
-
-        console.log(this.state.idPaciente);
-    }
+    atualizaEstadoData = async (event) => {
+        await this.setState({ dataRealizacao : event.target.value })
+    };
 
     componentDidMount(){
        
@@ -215,20 +173,38 @@ class Cadastro extends Component{
                 <section className="cadastro-consulta">
                     <h1 className="titulo-secao">Cadastro de Consultas</h1>
                     <form onSubmit={this.cadastrarConsulta}>
-                        <input list="idMedico" name="idMedico"/>
-                            <datalist>
+                        <div className="container">
                                 
-                                <option value={this.buscarIdPaciente}/>
-                            </datalist>
-                        <input list="idPaciente" name="idPaciente"/>
-                            <datalist>
-                                <option value={this.buscarIdMedico}/>
-                            </datalist>
-                        <input list="idSituacao" name="idSituacao"/>
-                            <datalist>
-                                <option value={this.buscarIdSituacao}/>
-                            </datalist>
-                        <input type="submit"/>
+                                <input 
+                                    type="text"
+                                    id="idMedico"
+                                    value={this.state.idMedicoNovo}
+                                    onChange={this.atualizaEstadoMedico}
+                                    placeholder="idMedico"
+                                />
+                                <input 
+                                    type="text"
+                                    id="idPaciente"
+                                    value={this.state.idPacienteNovo}
+                                    onChange={this.atualizaEstadoPaciente}
+                                    placeholder="idPaciente"
+                                />
+                                <input 
+                                    type="text"
+                                    id="idSituacao"
+                                    value={this.state.idSituacaoNovo}
+                                    onChange={this.atualizaEstadoSitacao}
+                                    placeholder="idSituacao"
+                                />
+                                <input 
+                                    type="text"
+                                    id="dataRealizacao"
+                                    value={this.state.dataRealizacaoNovo}
+                                    onChange={this.atualizaEstadoData}
+                                    placeholder="dataRealizacao"
+                                />
+                                <button type="submit" onClick={this.limparCampos} >Cadastrar</button> 
+                        </div>
                     </form>
                 </section>
             </div>
