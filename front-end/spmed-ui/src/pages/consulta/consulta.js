@@ -53,11 +53,11 @@ class Consultas extends Component{
                                 this.state.listaConsultas.map( (consulta) => {
                                     return(
                                         <tr key={consulta.idConsulta }>
-                                            <td>{consulta.medico.nomeMedico }</td>
-                                            <td>{consulta.medico.especialidade.nomeEspecialidade }</td>
-                                            <td>{consulta.paciente.nomePaciente }</td>
+                                            <td>{consulta.idMedicoNavigation.nomeMedico }</td>
+                                            <td>{consulta.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade }</td>
+                                            <td>{consulta.idPacienteNavigation.nomePaciente }</td>
                                             <td>{consulta.dataRealizacao }</td>
-                                            <td>{consulta.situacao.tipoSituacao }</td>
+                                            <td>{consulta.idSituacaoNavigation.tipoSituacao }</td>
                                         </tr>
                                     )
                                 })

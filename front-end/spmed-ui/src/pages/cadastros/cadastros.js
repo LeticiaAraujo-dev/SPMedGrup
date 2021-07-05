@@ -64,10 +64,10 @@ class Cadastro extends Component{
 
  
                 body : JSON.stringify({ 
-                                        idMedico : this.state.idMedicoNovo,
-                                        idPaciente : this.state.idPacienteNovo,
-                                        dataRealizacao : this.state.dataRealizacaoNovo,
-                                        idSituacao : this.state.idSituacaoNovo
+                                        idMedicoNovo : this.state.idMedico,
+                                        idPacienteNovo : this.state.idPaciente,
+                                        dataRealizacaoNovo : this.state.dataRealizacao,
+                                        idSituacaoNovo : this.state.idSituacao
                 }),
 
                 // Define o cabeçalho da requisição
@@ -178,28 +178,28 @@ class Cadastro extends Component{
                                 <input 
                                     type="text"
                                     id="idMedico"
-                                    value={this.state.idMedicoNovo}
+                                    value={this.state.idMedico}
                                     onChange={this.atualizaEstadoMedico}
                                     placeholder="idMedico"
                                 />
                                 <input 
                                     type="text"
                                     id="idPaciente"
-                                    value={this.state.idPacienteNovo}
+                                    value={this.state.idPaciente}
                                     onChange={this.atualizaEstadoPaciente}
                                     placeholder="idPaciente"
                                 />
                                 <input 
                                     type="text"
                                     id="idSituacao"
-                                    value={this.state.idSituacaoNovo}
+                                    value={this.state.idSituacao}
                                     onChange={this.atualizaEstadoSitacao}
                                     placeholder="idSituacao"
                                 />
                                 <input 
                                     type="text"
                                     id="dataRealizacao"
-                                    value={this.state.dataRealizacaoNovo}
+                                    value={this.state.dataRealizacao}
                                     onChange={this.atualizaEstadoData}
                                     placeholder="dataRealizacao"
                                 />

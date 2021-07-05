@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj": {}
+    "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj": {
+    "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
+        "projectUniqueName": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
         "projectName": "SPMedGroup_2.0",
-        "projectPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
+        "projectPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
         "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0\\obj\\",
+        "outputPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
