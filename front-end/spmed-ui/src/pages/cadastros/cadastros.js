@@ -56,6 +56,7 @@ class Cadastro extends Component{
         }
 
         else {
+            console.log('Cadastrando...')
 
             fetch('http://localhost:5000/api/Consulta',
             {
@@ -64,17 +65,19 @@ class Cadastro extends Component{
 
  
                 body : JSON.stringify({ 
-                                        idMedicoNovo : this.state.idMedico,
-                                        idPacienteNovo : this.state.idPaciente,
-                                        dataRealizacaoNovo : this.state.dataRealizacao,
-                                        idSituacaoNovo : this.state.idSituacao
+                                        idMedico : this.state.idMedico,
+                                        idPaciente : this.state.idPaciente,
+                                        dataRealizacao : this.state.dataRealizacao,
+                                        idSituacao : this.state.idSituacao
                 }),
 
                 // Define o cabeçalho da requisição
-                // headers : {
-                //     "Content-Type" : "application/json",
-                //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-                // }
+                headers : {
+                    "Content-Type" : "application/json",
+                    // 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+                }
+
+
             })
 
 
@@ -149,18 +152,22 @@ class Cadastro extends Component{
 
     atualizaEstadoMedico = async (event) => {
         await this.setState({ idMedico : event.target.value })
+        console.log(this.state.idMedico)
     };
 
     atualizaEstadoPaciente = async (event) => {
         await this.setState({ idPaciente : event.target.value })
+        console.log(this.state.idPaciente)
     };
 
     atualizaEstadoSitacao = async (event) => {
         await this.setState({ idSituacao : event.target.value })
+        console.log(this.state.idSituacao)
     };
 
     atualizaEstadoData = async (event) => {
         await this.setState({ dataRealizacao : event.target.value })
+        console.log(this.state.dataRealizacao)
     };
 
     componentDidMount(){
@@ -203,7 +210,7 @@ class Cadastro extends Component{
                                     onChange={this.atualizaEstadoData}
                                     placeholder="dataRealizacao"
                                 />
-                                <button type="submit" onClick={this.limparCampos} >Cadastrar</button> 
+                                <button type="submit" >Cadastrar</button> 
                         </div>
                     </form>
                 </section>

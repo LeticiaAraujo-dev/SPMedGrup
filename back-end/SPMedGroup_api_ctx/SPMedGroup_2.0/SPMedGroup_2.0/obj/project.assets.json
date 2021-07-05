@@ -7743,20 +7743,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cliente\\.nuget\\packages\\": {}
+    "C:\\Users\\46743118885\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
+      "projectUniqueName": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
       "projectName": "SPMedGroup_2.0",
-      "projectPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
-      "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\obj\\",
+      "projectPath": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\SPMedGroup_2.0.csproj",
+      "packagesPath": "C:\\Users\\46743118885\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\46743118885\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7834,7 +7839,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

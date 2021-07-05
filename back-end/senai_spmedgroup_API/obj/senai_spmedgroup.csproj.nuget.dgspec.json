@@ -1,32 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj": {}
+    "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj": {
+    "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
+        "projectUniqueName": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
         "projectName": "senai_spmedgroup",
-        "projectPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
-        "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cliente\\Desktop\\Senai\\senai_spmedgroup\\SPMedGrup\\back-end\\senai_spmedgroup_API\\obj\\",
+        "projectPath": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\senai_spmedgroup_API\\senai_spmedgroup.csproj",
+        "packagesPath": "C:\\Users\\46743118885\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\senai_spmedgroup_API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\46743118885\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net50"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net50": {
             "projectReferences": {}
           }
         },
@@ -37,8 +40,7 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net50": {
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -61,25 +63,12 @@
               "version": "[6.11.1, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }

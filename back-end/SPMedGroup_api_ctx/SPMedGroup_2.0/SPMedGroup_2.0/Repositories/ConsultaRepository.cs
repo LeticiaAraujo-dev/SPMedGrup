@@ -83,13 +83,16 @@ namespace SPMedGroup_2._0.Repositories
                                 IdEspecialidadeNavigation = new Especialidade
                                 {
                                     NomeEspecialidade = c.IdMedicoNavigation.IdEspecialidadeNavigation.NomeEspecialidade
-                                }
+                                },
+
+                                IdUsuario = c.IdMedicoNavigation.IdUsuario
                             },
 
                         IdPacienteNavigation = new Paciente
                             {
                                 IdPaciente = c.IdPacienteNavigation.IdPaciente,
-                                NomePaciente = c.IdPacienteNavigation.NomePaciente
+                                NomePaciente = c.IdPacienteNavigation.NomePaciente,
+                                IdUsuario = c.IdPacienteNavigation.IdUsuario
                             },
 
                         IdSituacaoNavigation = new Situacao
