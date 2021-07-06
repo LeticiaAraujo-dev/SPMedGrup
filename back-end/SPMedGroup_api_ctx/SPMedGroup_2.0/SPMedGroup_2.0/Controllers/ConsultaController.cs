@@ -24,12 +24,14 @@ namespace senai_spmedgroup.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_consultaRepository.ListarTodos());
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(Consultum novaConsulta)
         {
@@ -50,6 +52,7 @@ namespace senai_spmedgroup.Controllers
             return NotFound("Nenhuma consulta encontrada para o identificador informado");
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Consultum ConsultaAtualizada)
         {
@@ -63,6 +66,7 @@ namespace senai_spmedgroup.Controllers
             return NotFound("Nenhuma clinica encontrado para o identificador informado");
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -78,6 +82,7 @@ namespace senai_spmedgroup.Controllers
             return NotFound("Nenhuma consulta encontrada para o identificador informado");
         }
 
+        [Authorize]
         [HttpGet("minhas")]
         public IActionResult GetMy()
         {

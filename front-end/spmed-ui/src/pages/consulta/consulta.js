@@ -10,10 +10,12 @@ class Consultas extends Component{
     }
 
     buscarConsulta = () => {
-        fetch('http://localhost:5000/api/Consulta'
-            //headers : { 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login') 
-        //}
-        )
+        fetch('http://localhost:5000/api/Consulta',
+        {
+            headers : {
+                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
 
         .then(resposta => {
             if (resposta.status !== 200) {

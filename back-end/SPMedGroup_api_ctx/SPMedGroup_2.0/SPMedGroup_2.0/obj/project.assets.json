@@ -7744,7 +7744,7 @@
   },
   "packageFolders": {
     "C:\\Users\\46743118885\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7756,7 +7756,7 @@
       "outputPath": "C:\\Users\\46743118885\\Desktop\\Leticia_2DM\\SPMedGrup\\back-end\\SPMedGroup_api_ctx\\SPMedGroup_2.0\\SPMedGroup_2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\46743118885\\AppData\\Roaming\\NuGet\\NuGet.Config",

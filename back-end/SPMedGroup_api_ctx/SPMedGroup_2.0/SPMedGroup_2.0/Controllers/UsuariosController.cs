@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using senai_spmedgroup.Interfaces;
 using SPMedGroup_2._0.Domains;
@@ -84,6 +85,7 @@ namespace senai_spmedgroup.Controllers
             });
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -97,6 +99,7 @@ namespace senai_spmedgroup.Controllers
             return NotFound("Nenhum usuario encontrado para o identificador informado");
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Usuario UsuarioAtualizado)
         {
@@ -110,6 +113,7 @@ namespace senai_spmedgroup.Controllers
             return NotFound("Nenhum usuario encontrado para o identificador informado");
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
