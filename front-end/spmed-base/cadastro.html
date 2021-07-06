@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cadastros - SPMedGroup</title>
+        <!-- Estilos -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+    <div>
+        <section className="cadastro-consulta">
+            <h1 className="titulo-secao">Cadastro de Consultas</h1>
+            <form onSubmit={this.cadastrarConsulta}>
+                <div className="container">
+                    
+                    <input 
+                        type="text"
+                        id="idMedico"
+                        value={this.state.idMedico}
+                        onChange={this.atualizaEstadoMedico}
+                        placeholder="idMedico"
+                    />
+                    <input 
+                        type="text"
+                        id="idPaciente"
+                        value={this.state.idPaciente}
+                        onChange={this.atualizaEstadoPaciente}
+                        placeholder="idPaciente"
+                    />
+                    <input 
+                        type="text"
+                        id="idSituacao"
+                        value={this.state.idSituacao}
+                        onChange={this.atualizaEstadoSitacao}
+                        placeholder="idSituacao"
+                    />
+                    <input 
+                        type="text"
+                        id="dataRealizacao"
+                        value={this.state.dataRealizacao}
+                        onChange={this.atualizaEstadoData}
+                        placeholder="dataRealizacao"
+                    />
+                    <button type="submit" >Cadastrar</button> 
+                </div>
+            </form>
+        </section>
+    </div>
+</html>
