@@ -36,7 +36,8 @@ namespace SPMedGroup_2._0
                 options.AddPolicy("CorpsPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000")
+                        builder.WithOrigins("http://localhost:3000", "http://localhost:19006")
+
                                                                     .AllowAnyHeader()
                                                                     .AllowAnyMethod();
 

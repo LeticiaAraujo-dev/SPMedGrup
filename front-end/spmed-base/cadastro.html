@@ -8,8 +8,55 @@
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
+    <body>
+    
 
-    <div>
+        <header id= "header">
+            <a href="home.html"><img src="assets/img/logo_spmedgroup_v1.png" alt="Logo do SP Med Group"></a>
+        </header>
+
+        <div>
+            <section class="cadastro-consulta">
+                <h1 class="titulo-secao">Cadastro de Consultas</h1>
+                <form>
+                    <div class="container">
+                    
+                        <input 
+                            type="text"
+                            id="idMedico"
+                            value=""
+                            placeholder="Ex: 3"
+                        />
+                        <input 
+                            type="text"
+                            id="idPaciente"
+                            value=""
+                            placeholder="Ex: 4"
+                        />
+                        <input 
+                            type="text"
+                            id="idSituacao"
+                            value=""
+                            placeholder="Ex: 1 "
+                        />
+                        <input 
+                            type="text"
+                            id="dataRealizacao"
+                            value="" 
+                            placeholder="Ex: 01/01/2021 15:00:00"
+                        />
+                    </div>
+                    <button type="submit" >Cadastrar</button>
+                </form>
+            </section>
+        </div>
+
+        <footer>
+            <a href="home.html"><img src="assets/img/logo_spmedgroup_v1.png" alt="Logo do SP Med Group"></a>
+        </footer>
+    </body>
+</html>
+    <!-- <div>
         <section className="cadastro-consulta">
             <h1 className="titulo-secao">Cadastro de Consultas</h1>
             <form onSubmit={this.cadastrarConsulta}>
@@ -47,5 +94,4 @@
                 </div>
             </form>
         </section>
-    </div>
-</html>
+    </div> -->

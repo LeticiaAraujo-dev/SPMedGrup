@@ -121,9 +121,9 @@ class Cadastro extends Component{
             method : 'DELETE',
 
             // Define o cabeçalho da requisição
-            // headers : {
-            //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-            // }
+            headers : {
+                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+             }
         })
 
         .then(resposta => {
