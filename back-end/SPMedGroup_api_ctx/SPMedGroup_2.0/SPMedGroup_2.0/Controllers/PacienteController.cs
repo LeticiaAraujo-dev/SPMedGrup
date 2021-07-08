@@ -1,31 +1,30 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using senai_spmedgroup.Domains;
-//using senai_spmedgroup.Interfaces;
-//using senai_spmedgroup.Repository;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using senai_spmedgroup.Interfaces;
+using SPMedGroup_2._0.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-//namespace senai_spmedgroup.Controllers
-//{
-//    [Produces("application/json")]
-//    [Route("api/[controller]")]
-//    [ApiController]
-//    public class PacienteController : ControllerBase
-//    {
-//        private IPacienteRepository _pacienteRepository { get; set; }
+namespace senai_spmedgroup.Controllers
+{
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PacienteController : ControllerBase
+    {
+        private IPacienteRepository _pacienteRepository { get; set; }
 
-//        public PacienteController()
-//        {
-//            _pacienteRepository = new PacienteRepository();
-//        }
-//        [HttpGet]
+        public PacienteController()
+        {
+            _pacienteRepository = new PacienteRepository();
+        }
+        [HttpGet]
 
-//        public IActionResult Get()
-//        {
-//            return Ok(_pacienteRepository.ListarTodos());
-//        }
+        public IActionResult Get()
+        {
+            return Ok(_pacienteRepository.ListarTodos());
+        }
 
 //        [HttpPost]
 //        public IActionResult Post(PacienteDomain novoPaciente)
@@ -78,5 +77,5 @@
 
 //            return NotFound("Nenhum paciente encontrado para o identificador informado");
 //        }
-//    }
-//}
+    }
+}

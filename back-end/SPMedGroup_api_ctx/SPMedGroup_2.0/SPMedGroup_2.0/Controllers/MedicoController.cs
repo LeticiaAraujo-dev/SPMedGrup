@@ -1,31 +1,30 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using senai_spmedgroup.Domains;
-//using senai_spmedgroup.Interfaces;
-//using senai_spmedgroup.Repository;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using senai_spmedgroup.Interfaces;
+using SPMedGroup_2._0.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-//namespace senai_spmedgroup.Controllers
-//{
-//    [Produces("application/json")]
-//    [Route("api/[controller]")]
-//    [ApiController]
-//    public class MedicoController : ControllerBase
-//    {
-//        private IMedicoRepository _medicoRepository { get; set; }
+namespace senai_spmedgroup.Controllers
+{
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class MedicoController : ControllerBase
+    {
+        private IMedicoRepository _medicoRepository { get; set; }
 
-//        public MedicoController()
-//        {
-//            _medicoRepository = new MedicoRepository();
-//        }
-//        [HttpGet]
+        public MedicoController()
+        {
+            _medicoRepository = new MedicoRepository();
+        }
+        [HttpGet]
 
-//        public IActionResult Get()
-//        {
-//            return Ok(_medicoRepository.ListarTodos());
-//        }
+        public IActionResult Get()
+        {
+            return Ok(_medicoRepository.ListarTodos());
+        }
 
 //        [HttpPost]
 //        public IActionResult Post(MedicoDomain novoMedico)
@@ -82,5 +81,5 @@
 
 //            return NotFound("Nenhum medico encontrado para o identificador informado");
 //        }
-//    }
-//}
+    }
+}

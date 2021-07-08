@@ -9,6 +9,7 @@ img {
     border-style: none;
 }
 
+
 #header {
     background-color: #167866;
 }
@@ -41,18 +42,105 @@ footer img{
     line-height: 33px;
 }
 
-.cadastro-consulta{
-    background-color: blue;
+.area-cadastro{
+    background-color: ghostwhite; 
+    width: 100%;
+    height: 729px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container{
+    background-color: #D0DBD8; 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 500px;
-    height: 100;
-}
-
-.container{
     width: 80%;
     height: 80%;
-    background-color: blueviolet;
+    border-width: 0px 5px 5px 5px; /* 25px top, 10px right, 4px bottom and 35px left */
+    border-style: dashed;
+}  
+
+.titulo-secao{
+    padding-bottom: 100px;
+    font-size: 45px;
+}
+
+form{
+    width: 100%;
+    /* background-color: crimson; */
+}
+
+.texto-cadastro {
+    width: 100%;
+    /* background-color: coral; */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* width: 40%;
+    margin: 10px;
+    text-align: center;
+    background-color: #F8F8F8;
+    font-family: 'Open Sans';
+    font-weight: lighter;
+    border: none;
+    height: 34px;
+    font-size: 12px;
+    box-shadow: 1px 1px 1px #ccc; */
+}
+
+.campo-digitação{
+    display: flex;
+    margin-right: 40px;
+}
+
+.campo-digitação p{
+    font-family: Open Sans;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+    padding-right: 5px;
+}
+
+.campo-digitação input{
+    width: 200px;
+    height: 30px;
+}
+
+form{
+    text-align: center;
+}
+
+.Cadastrar{
+    background-color: #167866; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 40px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.consultas-lista{
+    width: 100%;
+    height: 800px;
+    background-color: hotpink;
+    display: flex;
+    justify-content: center;
+    content: normal;
+}
+
+.container-consulta{
+    width: 80%;
+    height: 100%;
+    background-color: indigo;
+    display: flex;
+    justify-content: center;
 }

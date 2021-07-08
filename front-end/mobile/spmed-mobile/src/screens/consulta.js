@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import moment from 'moment';
 
 import api from '../services/api';
 
@@ -54,7 +55,7 @@ export default class consulta extends Component {
         <Text style={styles.flatItemInfo} >{item.idMedicoNavigation.nomeMedico }</Text>
         <Text style={styles.flatItemInfo} >{item.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade }</Text>
         <Text style={styles.flatItemInfo} >{item.idPacienteNavigation.nomePaciente}</Text>
-        <Text style={styles.flatItemInfo} >{Intl.DateTimeFormat('pt-BR').format(new Date(item.dataRealizacao ))}</Text>
+        <Text style={styles.flatItemInfo} >{moment.locale('PT-BR'), moment(item.dataRealizacao).format('LLL')}</Text>
         <Text style={styles.flatItemInfo} >{item.idSituacaoNavigation.tipoSituacao }</Text>
       </View>
     </View>

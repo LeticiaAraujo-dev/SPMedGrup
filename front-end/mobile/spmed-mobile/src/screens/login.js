@@ -33,17 +33,18 @@ export default class Login extends Component {
         return (
             <ImageBackground 
             style={StyleSheet.absoluteFillObject}
+            style= {styles.main}
             >
                 <TextInput style={styles.inputLogin}
                     placeholder='username'
-                    placeholderTextColor='#FFF'
+                    placeholderTextColor='#167866'
                     keyboardType='email-address'
                     onChangeText={email => this.setState({ email })}
                 />
 
                 <TextInput style={styles.inputLogin}
                     placeholder='password'
-                    placeholderTextColor='#FFF'
+                    placeholderTextColor='#167866'
                     secureTextEntry={true}
                     onChangeText={senha => this.setState({ senha })}
                 />
@@ -71,11 +72,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         justifyContent: 'center',
+        backgroundColor: '#F1F1F1' ,
         alignItems: 'center'
     },
 
     mainImgLogin: {
-        tintColor: '#FFF',
+        backgroundColor: '#000' ,
         height: 100,
         width: 90,
         margin: 60,
@@ -83,11 +85,12 @@ const styles = StyleSheet.create({
     },
     
     inputLogin: {
+        marginTop: 50,
         width: 240,
         marginBottom: 40,
         fontSize: 18,
-        color: '#FFF',
-        borderColor: '#FFF',
+        color: '#167866',
+        borderColor: '#167866',
         borderBottomWidth: 2
     },
 
@@ -96,8 +99,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         height: 38,
         width: 240,
-        backgroundColor: '#FFF',
-        borderColor: '#FFF',
+        backgroundColor: '#167866',
+        borderColor: '#167866',
         borderWidth: 1,
         borderRadius: 4,
         shadowOffset: { height: 1, width: 1 }
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     btnLoginText: {
         fontSize: 12,
         fontFamily: 'Open Sans Light',
-        color: '#B727FF',
+        color: '#167866',
         letterSpacing: 6,
         textTransform: 'uppercase'
     }

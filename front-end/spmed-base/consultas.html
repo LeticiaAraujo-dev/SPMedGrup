@@ -14,7 +14,92 @@
       <a href="home.html"><img src="assets/img/logo_spmedgroup_v1.png" alt="Logo do SP Med Group"></a>
     </header>
 
-    
+    <section class="consultas-lista">
+      <main class="container-consulta">
+        <h1>Consultas</h1>
+        <table>
+          <thead class="titulos-consulta">
+              <tr>
+                    <th>Medico</th>
+                    <th>especialidade</th>
+                    <th>Paciente</th>
+                    <th>Data e Hora</th>
+                    <th>Situação</th>
+              </tr>
+          </thead>
+          <tbody class="card-consulta">
+            <tr >
+              <td>nomeMedico </td>
+              <td>nomeEspecialidade</td>
+              <td>nomePaciente</td>
+              <td>dataRealizacao</td>
+              <td>tipoSituacao</td>
+            </tr>
+          </tbody>
+          <tbody class="card-consulta">
+            <tr >
+              <td>nomeMedico </td>
+              <td>nomeEspecialidade</td>
+              <td>nomePaciente</td>
+              <td>dataRealizacao</td>
+              <td>tipoSituacao</td>
+            </tr>
+          </tbody>
+          <tbody class="card-consulta">
+            <tr >
+              <td>nomeMedico </td>
+              <td>nomeEspecialidade</td>
+              <td>nomePaciente</td>
+              <td>dataRealizacao</td>
+              <td>tipoSituacao</td>
+            </tr>
+          </tbody>
+          <tbody class="card-consulta">
+            <tr >
+              <td>nomeMedico </td>
+              <td>nomeEspecialidade</td>
+              <td>nomePaciente</td>
+              <td>dataRealizacao</td>
+              <td>tipoSituacao</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+
+      <!-- <main>
+        <h1>Consultas</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Medico</th>
+              <th>especialidade</th>
+              <th>Paciente</th>
+              <th>Data e Hora</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+            <tbody className="card-consulta">
+                {
+                    this.state.listaConsultas.map( (consulta) => {
+                        return(
+                            <tr key={consulta.idConsulta }>
+                                <td>{consulta.idMedicoNavigation.nomeMedico }</td>
+                                <td>{consulta.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade }</td>
+                                <td>{consulta.idPacienteNavigation.nomePaciente }</td>
+                                <td>{consulta.dataRealizacao }</td>
+                                <td>{consulta.idSituacaoNavigation.tipoSituacao }</td>
+                            </tr>
+                        )
+                    })
+                }
+            </tbody>
+        </table>
+      </main> -->
+    </section>
+
+    <footer>
+      <a href="home.html"><img src="assets/img/logo_spmedgroup_v1.png" alt="Logo do SP Med Group"></a>
+    </footer>
   </body>
 </html>
 

@@ -10,8 +10,56 @@ class Cadastro extends Component{
             idMedico : 0,
             idPaciente : 0,
             dataRealizacao: new Date(),
-            idSituacao: 0
+            idSituacao: 0,
+            listaMedicos: [],
+            listaPacientes: [],
         }
+    }
+
+
+
+    buscarMedicos = () => {
+        fetch('http://localhost:5000/api/Medico',
+        {
+            // headers : {
+            //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            // }
+        })
+
+        .then(resposta => {
+            if (resposta.status !== 200) {
+                throw Error();
+            };
+            return resposta.json();
+        })
+
+        .then(data => this.setState({ listaMedicos: data }))
+
+        .catch((erro) => console.log(erro))
+
+        console.log(this.state.listaMedicos);
+    }
+
+    buscarPacientes = () => {
+        fetch('http://localhost:5000/api/Paciente',
+        {
+            // headers : {
+            //     'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            // }
+        })
+
+        .then(resposta => {
+            if (resposta.status !== 200) {
+                throw Error();
+            };
+            return resposta.json();
+        })
+
+        .then(data => this.setState({ listaPacientes: data }))
+
+        .catch((erro) => console.log(erro))
+
+        console.log(this.state.listaPacientes);
     }
 
     // Função responsável por cadastrar um Tipo de Evento
@@ -189,6 +237,29 @@ class Cadastro extends Component{
                                     onChange={this.atualizaEstadoMedico}
                                     placeholder="idMedico"
                                 />
+
+                                {/* <select
+                                    name="idMedico"
+                                    value={this.state.idMedico}
+                                    onChange={this.atualizaEstadoMedico}
+
+                                >
+                                    <option value="">Selecione o Medico</option>
+
+                                    {
+                                        // Percorre a lista de Tipos Eventos e retorna uma opção para cada tema
+                                        // definindo o valor como seu próprio ID
+                                        this.state.listaMedicos.map( medico => {
+                                            return(
+                                                <option key={medico.idMedico} value={medico.idMedico}>
+                                                    {medico.idMedicoNavigation.nomeMedico}
+                                                </option>
+                                            );
+                                        } )
+                                    }
+
+                                </select> */}
+                                
                                 <input 
                                     type="text"
                                     id="idPaciente"
